@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');  
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-wrapper {
+    width:50%;
+    height: 80%;
+    box-shadow: 0px 0px 5px rgb(132, 131, 131);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-wrapper-easy {
+    width:30%;
+    height: 60%;
+}
+
+.game-wrapper-med {
+    width:50%;
+    height: 80%;
+}
+
+.game-wrapper-hard {
+    width:60%;
+    height: 90%;
+}
+
+.game-header {
+    height: 15%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    border-bottom: 2px solid rgb(214, 214, 214);
+    text-align: center;
+}
+
+.header-item {
+    position: relative;
+    border-bottom: 2px solid #14bdac;
+    box-shadow: 0px 2px 5px rgb(221, 221, 221);
+    padding: 0.3rem;
+    font-weight: 700;
+    border-radius: 5px;
+    background-color: #14bdac47;
+}
+
+.reset-button:hover {
+    cursor: pointer;
+    border-bottom: 2px solid red;
+}
+
+.game-board {
+    width: 90%;
+    height: 90%;
+    margin: 1rem 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 2px solid rgb(103, 145, 19);
+    border-radius: 5px;
+}
+
+.easy-board {
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+}
+
+.closed:nth-child(even) {
+    background-color:  #a2d149;
+}
+
+.closed:nth-child(odd) {
+    background-color:  #aad751;
+}
+
+.open:nth-child(odd) {
+    background-color: #e5c29f;
+}
+
+.open:nth-child(even) {
+    background-color: #d7b899;
+}
+
+.bomb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(234, 50, 50);
+}
+
+.bomb::after {
+    content: '';
+    display: inline-block;
+    background-color: black;
+    border-radius: 100%;
+    width: 35%;
+    aspect-ratio: 1;
+}
+
+.flag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flag::after {
+    content: '';
+    display: inline-block;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid red;
+    transform: rotate(-90deg) translateX(5px);
+}
+
+.flag::before {
+    content: '';
+    display: inline-block;
+    width:2.5px;
+    height: 21px;
+    background-color: black;
+}
+
+.cell {
+    width:100%;
+    height: 100%;   
+}
+
+.cell:hover {
+    background-color: rgb(191,225,125);
+}
+
+/* End of game menu */
+
+.end-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:-200%;
+}
+
+.end-menu {
+    width: 25%;
+    height: 20%;
+    border: 2px solid #e27a3c;
+    border-radius: 5px;
+    background-color: #fed887;
+}
+
+.end-menu-header {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #e27a3c;
+}
+
+.end-menu-header-text {
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.end-menu-body {
+    display: flex;
+    width: 100%;
+    height: 65%;
+    justify-content: center;
+    align-items: center;
+}
+
+.end-menu-body-button {
+    border: 2px solid #e27a3c;
+    background-color: #c47b1b90;
+    padding: 0.7rem;
+    border-radius: 5px;
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.end-menu-body-button:hover {
+    border: 2px solid #e27a3c;
+    background-color: #c47b1b;  
+    cursor: pointer;
+}
+
+.open-1::after {
+    height: 100%;
+    content: '1';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1d77d1;
+    font-weight: 700;
+}
+
+.open-2::after {
+    height: 100%; 
+    content: '2';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #57964e;
+    font-weight: 700;
+}
+
+.open-3::after {
+    height: 100%; 
+    content: '3';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d43c39;
+    font-weight: 700;
+}
+
+.open-4::after {
+    height: 100%; 
+    content: '4';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gold ;
+    font-weight: 700;
+}
