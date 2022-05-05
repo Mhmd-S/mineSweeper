@@ -240,8 +240,8 @@ function addFlag(e) {
     e.preventDefault()
     const cell = e.target;
     cell.classList.add('flag');
-    cell.removeEventListener('click', (e)=> {displayCell(e)})
-    cell.removeEventListener('contextmenu', (e)=>addFlag(e))
+    cell.removeEventListener('click', displayCell)
+    cell.removeEventListener('contextmenu', addFlag)
     cell.addEventListerner('contextmenu', (e)=>removeFlag(e))
 }
 
@@ -251,7 +251,7 @@ function removeFlag(e) {
     cell.classList.remove('flag');
     cell.addEventListerner('click', (e)=> {displayCell(e)})
     cell.addEventListerner('contextmenu', (e)=>addFlag(e))
-    cell.removeEventListerner('contextmenu', (e)=>removeFlag(e))
+    cell.removeEventListerner('contextmenu', removeFlag)
 }
 
 // Timer Section ----------------------------------------------------------------------------------
