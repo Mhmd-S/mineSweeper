@@ -237,6 +237,7 @@ function displayEmptyCells(cell) {
 };
 
 function addFlag(e) {
+    e.preventDefault()
     const cell = e.target;
     cell.classList.add('flag');
     cell.removeEventListener('click', (e)=> {displayCell(e)})
@@ -245,6 +246,7 @@ function addFlag(e) {
 }
 
 function removeFlag(e) {
+    e.preventDefault()
     const cell = e.target;
     cell.classList.remove('flag');
     cell.addEventListerner('click', (e)=> {displayCell(e)})
